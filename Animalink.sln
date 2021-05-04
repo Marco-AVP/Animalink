@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.Data", "Animalink
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.Services", "Animalink.Services\Animalink.Services.csproj", "{5EF7C294-531B-46D7-B6ED-24326D992B22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animalink.AdminWebApp", "Animalink.AdminWebApp\Animalink.AdminWebApp.csproj", "{714B255C-7697-4E94-A218-5AD60D9F6FF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animalink.DataAccess", "Animalink.DataAccess\Animalink.DataAccess.csproj", "{A625454A-669A-436B-B4A9-57116B33E298}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{5EF7C294-531B-46D7-B6ED-24326D992B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EF7C294-531B-46D7-B6ED-24326D992B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EF7C294-531B-46D7-B6ED-24326D992B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714B255C-7697-4E94-A218-5AD60D9F6FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714B255C-7697-4E94-A218-5AD60D9F6FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714B255C-7697-4E94-A218-5AD60D9F6FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714B255C-7697-4E94-A218-5AD60D9F6FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A625454A-669A-436B-B4A9-57116B33E298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A625454A-669A-436B-B4A9-57116B33E298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A625454A-669A-436B-B4A9-57116B33E298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A625454A-669A-436B-B4A9-57116B33E298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Animalink.Data.Base
 {
-    public class Entity
+    public abstract class Entity
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+        public Guid Id { get; private set; }
+        public DateTime CreatedAt { get; private set; } 
         public DateTime UpdatedAt { get; private set; }
         private bool _isDeleted;
 
@@ -31,13 +31,6 @@ namespace Animalink.Data.Base
             Id = Guid.NewGuid();
             UpdatedAt = DateTime.UtcNow;
             CreatedAt = CreatedAt;
-        }
-
-        protected Entity(Guid id, DateTime createdAt, DateTime updatedAd)
-        {
-            Id = id;
-            CreatedAt = createdAt;
-            UpdatedAt = updatedAd;
         }
     }
 }

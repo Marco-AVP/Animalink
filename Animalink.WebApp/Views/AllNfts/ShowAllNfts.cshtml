@@ -1,0 +1,71 @@
+﻿@model Animalink.WebApp.Models.Nfts.AllNftsViewModel
+@{
+    ViewData["Title"] = "Buy NFT";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/AllNftsStyle.css"/> }      
+
+
+
+@*---Sorting---*@
+<section class="Sorting" style="padding-left: 20px;"> @*---change to css---*@
+    <p>Sorting</p>
+    <a asp-controller="AllNfts" asp-action="ShowAllNfts" asp-route-nftType="">All</a>
+    <a asp-controller="AllNfts" asp-action="ShowAllNfts" asp-route-nftType="Animal">Animals</a>
+    <a asp-controller="AllNfts" asp-action="ShowAllNfts" asp-route-nftType="Event">Events</a>
+    <br />
+    <br />
+</section>
+
+
+@*---All NFTs---*@
+<section class="AllNFTs">
+    <h3>All NFTs</h3>
+
+    <div class="card-group">
+
+        @foreach (var item in Model.AllTemplatesDataPocos)
+        {
+            <div class="col-2">
+                <div class="card">
+                    <img class="card-img-top" src="~/Media/Frog_mockup.png" alt="Image">
+                    <div class="card-body">
+                        <p class="card-text">Name: @item.NftName <br /> Available: @item.NumberAvailable</p>
+                        <a href="#" class="btn btn-primary">@item.Price</a>
+
+                        <a class="btn btn-primary" asp-controller="Nft" asp-action="NftInfo" asp-route-nftId="@item.Id">Buy</a>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <br />
+</section>
+
+
+@*---Almost Soldout NFTs---*@
+<section class="AlmostGone">
+    <h3>Almost Gone NFTs</h3>
+
+    <div class="card-group">
+
+        @foreach (var item in Model.AllTemplatesDataPocos)
+        {
+            <div class="card">
+                <img class="card-img-top" src="~/Media/Frog_mockup.png" alt="Image" >
+                <div class="card-body">
+                    <p class="card-text">Name: @item.NftName <br /> Available: @item.NumberAvailable</p>
+                    <a href="#" class="btn btn-primary">@item.Price</a>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <br />
+</section>
+

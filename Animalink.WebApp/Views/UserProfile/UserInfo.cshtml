@@ -1,0 +1,87 @@
+﻿@model Animalink.WebApp.Models.Users.UserProfileViewModel
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/UserProfileStyle.css" />
+}
+
+
+@*---ImageBanner---*@
+
+<section class="UserProfileBanner">
+    <br />
+    <h1> Animalink </h1>
+    <br />
+</section>
+
+<section class="Title">
+    <br />
+    <h2>User</h2>
+    <br />
+</section>
+
+
+@*---User---*@
+
+    <section class="UserInfo">
+        <div class="container">
+            <br />
+
+            <div class="row align-items-center justify-content-center">
+
+                <div class="col" style="max-height: 200px; max-width: 200px;">
+                    <img src="~/Media/UserAvatar.png" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+                </div>
+
+                <div class="col">
+                    <h3>Username: @Model.UserDataPoco.UserName</h3>
+                </div>
+
+                <div class="col">
+                    <h3>Nfts Owned: @Model.UserDataPoco.NftsOwned</h3>
+                </div>
+
+            </div>
+
+            <br />
+        </div>
+    </section>
+
+
+@*---User Map---*@
+
+<section class="UserMap">
+    <div class="container">
+        <br />
+        <h3>NFT Map</h3>
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <img src="~/Media/WorldMap.jpg" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <h3>More Stats</h3>
+                <p>More Stats</p>
+                <p>More Stats</p>
+                <p>More Stats</p>
+            </div>
+        </div>
+
+        <br />
+    </div>
+</section>
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿
+
+.Sorting{
+    background-color:moccasin;
+}
+
+
+.AllNFTs{
+    background-color:lightsteelblue;
+}
+
+.card-group{
+    width:100%;
+    margin:15px; 
+}
+
+.card {
+    max-width: 18rem;
+    margin: 5px;
+    margin-right: 40px;
+}
+
+.card-body{
+    background-color:antiquewhite;
+    text-align:center;
+}
+
+
+.AlmostGone {
+    background-color: lightcoral;
+}
+
+/*.Card {
+    border-color: black;
+    width: 18rem;
+}*/

@@ -1,0 +1,40 @@
+﻿
+
+.NftInfoBanner {
+    background-color: steelblue;
+    text-align: left;
+    padding-left:20px;
+}
+
+
+.Introduction {
+    background-color: cadetblue;
+    text-align:center;
+}
+
+.NftInfo {
+    background-color: cadetblue;
+    text-align: center;
+    padding: 25px;
+}
+
+.col{
+    
+}
+
+#Attributes {
+    background-color:floralwhite;
+    text-align:left;
+}
+
+#AttributesTitle{
+    text-align:center;
+}
+
+#Description {
+    background-color: aliceblue;
+}
+
+#Buy {
+    background-color: aliceblue;
+}

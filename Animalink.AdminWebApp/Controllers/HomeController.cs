@@ -1,10 +1,16 @@
 ﻿using Animalink.AdminWebApp.Models;
+using Animalink.AdminWebApp.Models.Nfts;
+using Animalink.Business.Nfts;
+using Animalink.Data.Pocos.Nfts;
+using Animalink.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Animalink.AdminWebApp.Controllers
@@ -18,10 +24,14 @@ namespace Animalink.AdminWebApp.Controllers
             _logger = logger;
         }
 
+        // response request
+        //[Authorize]
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
-        }
+        } 
+
 
         public IActionResult Privacy()
         {

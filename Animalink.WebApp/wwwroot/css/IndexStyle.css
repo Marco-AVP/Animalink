@@ -1,0 +1,35 @@
+﻿
+
+.Banner {
+    background-color: #6b8cb8;
+    text-align: center;
+    color:white;
+}
+
+section > img {
+    max-width:100%;
+}
+
+.Statistics{
+    background-color:brown;
+}
+
+.WhatIsAlink{
+    background-color:cadetblue;
+}
+
+.NewNFTs{
+    background-color:darksalmon;
+}
+
+.AlmostSoldout{
+    background-color:darkseagreen;
+}
+
+.Purpose{
+    background-color:goldenrod;
+}
+
+.Partners{
+    background-color:indianred;
+}

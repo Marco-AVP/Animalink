@@ -23,6 +23,16 @@ namespace WebApp.Controllers
             return View();
         }
 
+        //public IActionResult BuyNFT()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Partners()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

@@ -1,0 +1,20 @@
+﻿.UserProfileBanner {
+    background-color: steelblue;
+    text-align: center;
+}
+
+
+.Title {
+    background-color: lightblue;
+    padding-left:50px;
+}
+
+.UserInfo {
+    background-color: cadetblue;
+    text-align: center;
+    
+}
+
+.UserMap{
+    background-color:lightcoral;
+}

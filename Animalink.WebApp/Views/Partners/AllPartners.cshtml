@@ -1,0 +1,60 @@
+﻿@model Animalink.WebApp.Models.Partners.AllPartnersViewModel
+
+@{
+    ViewData["Title"] = "Partners";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/PartnersStyle.css" />
+}
+
+
+
+@*---ImageBanner---*@
+<section class="PartnerBanner">
+    <br />
+    <img src="~/Media/bannerPNG.png" alt="Image" style="max-width:100%" />
+    <h1> Animalink </h1>
+    <br />
+</section>
+
+
+@*---Partners Introduction---*@
+<section class="Introduction">
+    <h3>Our Partners</h3>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </p>
+    <br />
+</section>
+
+
+@*---Partners ---*@
+
+@foreach (var item in Model.PartnersDataPocos)
+{
+<section class="Partners">
+
+    <div class="container">
+        <div class="row">
+            <div class="col" style="max-height: 200px; max-width: 200px;">
+                <img src="~/Media/Partner_icon.png" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+            </div>
+            <div class="col">
+                <h2>@item.Name</h2>
+                <h5>@item.Description</h5>
+            </div>
+            <div class="col">
+                <h4>@item.WebsiteURL</h4>
+            </div>
+        </div>
+    </div>
+    
+</section>
+}
+
+
+
+

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Animalink.Data.Pocos
 {
-    public class GeneralStatisticsPoco
+    public class GeneralStatisticsPoco  // used to present the stats in presentation
     {
         public string MostSoldAnimal { get; set; }
         public string MostValuableAnimal { get; set; }

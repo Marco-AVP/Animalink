@@ -6,31 +6,18 @@ namespace Animalink.Data.Base
 {
     public abstract class Entity
     {
-        public Guid Id { get; private set; }
-        public DateTime CreatedAt { get; private set; } 
-        public DateTime UpdatedAt { get; private set; }
-        private bool _isDeleted;
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public bool IsDeleted
-        {
-            get => _isDeleted;
-            set
-            {
-                _isDeleted = value;
-                OnValueChanged();
-            }
-        }
-
-        protected void OnValueChanged()
-        {
-            UpdatedAt = DateTime.UtcNow;
-        }
+       
 
         protected Entity()
         {
             Id = Guid.NewGuid();
             UpdatedAt = DateTime.UtcNow;
-            CreatedAt = CreatedAt;
+            CreatedAt = DateTime.UtcNow; //?
         }
     }
 }

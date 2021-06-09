@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.WebApp", "Animalink.WebApp\Animalink.WebApp.csproj", "{CC766744-305E-4928-88EC-F725CAC283FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C22F9049-9041-439F-AA0E-5DFF91B21921} = {C22F9049-9041-439F-AA0E-5DFF91B21921}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.Business", "Animalink.Business\Animalink.Business.csproj", "{13E20F23-6C51-4FDA-A000-FD2522BE744A}"
 EndProject
@@ -11,9 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.Data", "Animalink
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.Services", "Animalink.Services\Animalink.Services.csproj", "{5EF7C294-531B-46D7-B6ED-24326D992B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animalink.AdminWebApp", "Animalink.AdminWebApp\Animalink.AdminWebApp.csproj", "{714B255C-7697-4E94-A218-5AD60D9F6FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.AdminWebApp", "Animalink.AdminWebApp\Animalink.AdminWebApp.csproj", "{714B255C-7697-4E94-A218-5AD60D9F6FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animalink.DataAccess", "Animalink.DataAccess\Animalink.DataAccess.csproj", "{A625454A-669A-436B-B4A9-57116B33E298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animalink.DataAccess", "Animalink.DataAccess\Animalink.DataAccess.csproj", "{A625454A-669A-436B-B4A9-57116B33E298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animalink.ConsoleApp", "ConsoleApp\Animalink.ConsoleApp.csproj", "{311462DB-9A5E-4FD2-A954-BCC2AA8C185C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +50,10 @@ Global
 		{A625454A-669A-436B-B4A9-57116B33E298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A625454A-669A-436B-B4A9-57116B33E298}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A625454A-669A-436B-B4A9-57116B33E298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{311462DB-9A5E-4FD2-A954-BCC2AA8C185C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311462DB-9A5E-4FD2-A954-BCC2AA8C185C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311462DB-9A5E-4FD2-A954-BCC2AA8C185C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311462DB-9A5E-4FD2-A954-BCC2AA8C185C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

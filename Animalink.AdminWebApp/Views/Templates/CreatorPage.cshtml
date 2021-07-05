@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Creator Page";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/CreatorPageStyle.css" /> }
+
+
+<section>
+    <div class="btn-group" role="group">
+        <a type="button" class="btn btn-primary" asp-controller="Templates" asp-action="Index">Templates</a>
+        <a type="button" class="btn btn-primary" asp-controller="Templates" asp-action="CreatorPage">Creator</a>
+    </div>
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <br />
+                <br />
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="CreateTemplate">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Template Creator</span></h2>
+                        </div>
+                    </a>
+                </div>
+                <br />
+                <br />
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="AddAnimal">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Add Animal</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="AddTemplateType">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Add Type</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="ChosenDropDown">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Add Rarity</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="ChosenDropDown">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Add Schema</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="ChosenDropDown">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Add Collection</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+    </div>
+
+</section>

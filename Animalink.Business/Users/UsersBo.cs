@@ -18,7 +18,7 @@ namespace Animalink.Business.Users
         {
             var genericBO = new GenericBo();
 
-            return await genericBO.ExecuteOperation(async () =>
+            return await genericBO.ExecuteDBOperation(async () =>
             {
                 var genericDao = new GenericDao();
                 return await genericDao.ReadAsync<User>(userId);

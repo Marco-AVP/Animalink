@@ -1,5 +1,5 @@
 ﻿using Animalink.AdminWebApp.Models;
-using Animalink.AdminWebApp.Models.Nfts;
+using Animalink.AdminWebApp.Models.Templates;
 using Animalink.Business.Nfts;
 using Animalink.Data.Pocos.Nfts;
 using Animalink.Services;

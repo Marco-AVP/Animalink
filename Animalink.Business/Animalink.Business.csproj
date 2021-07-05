@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Animalink.DataAccess\Animalink.DataAccess.csproj" />
     <ProjectReference Include="..\Animalink.Data\Animalink.Data.csproj" />
+    <ProjectReference Include="..\Animalink.Services\Animalink.Services.csproj" />
   </ItemGroup>
 
 </Project>

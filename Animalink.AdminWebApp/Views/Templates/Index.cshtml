@@ -1,0 +1,176 @@
+﻿@model Animalink.AdminWebApp.Models.Templates.TemplatesViewModel
+
+@{
+    ViewData["Title"] = "Templates";
+}
+
+
+<head>
+    @section Styles{
+        <link rel="stylesheet" href="~/css/AllTemplatesStyle.css" /> }
+        <script src="~/js/AllTemplatesJS.js"></script>
+</head>
+
+
+
+<section>
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a type="button" class="btn btn-primary" asp-controller="Templates" asp-action="Index">Templates</a>
+            </div>
+            <div class="col">
+                <a type="button" class="btn btn-primary" asp-controller="Templates" asp-action="CreatorPage">Creator</a>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+
+
+                        @using (Html.BeginForm())
+                        {
+                            <div class="row">
+                                <div class="col">
+                                    Type
+                                    @Html.DropDownListFor(x => x.TemplateTypeList,
+                                    Model.GetTemplateTypeList.Select(x => new SelectListItem { Text = x.TemplateType, Value = x.TemplateType.ToString() }),
+                                    new { @class = "form-control chosen-select", @multiple = true })
+                                </div>
+                                <div class="col">
+                                    Rarity
+                                    @Html.DropDownListFor(x => x.RarityList,
+                                    Model.GetRarityList.Select(x => new SelectListItem { Text = x.Rarity, Value = x.Rarity }),
+                                    new { @class = "form-control chosen-select", @multiple = true })
+                                </div>
+                                <div class="col">
+                                    Collection
+                                    @Html.DropDownListFor(x => x.CollectionList,
+                                        Model.GetCollectionList.Select(x => new SelectListItem { Text = x.Collection, Value = x.Collection }),
+                                        new { @class = "form-control chosen-select", @multiple = true })
+                                </div>
+                                <div class="col">
+                                    Name
+                                    @Html.DropDownListFor(x => x.TemplateNameList,
+                                    Model.GetTemplateNameList.Select(x => new SelectListItem { Text = x.TemplateName, Value = x.TemplateName }),
+                                    new { @class = "form-control chosen-select", @multiple = true })
+                                </div>
+                                <div class="col">
+                                    <input type="submit" name="name" value="Submit" />
+                                </div>
+                            </div>
+                        }
+
+
+                            @*Original Dropdown*@
+                            @*@using (Html.BeginForm())
+                            {
+
+                                @Html.DropDownListFor(x => x.TemplateTypeList,
+                                Model.GetTemplateTypeList.Select(x => new SelectListItem { Text = x.TemplateType, Value = x.TemplateType.ToString() }),
+                                new { @class = "form-control chosen-select", @multiple = true });
+
+                                @Html.DropDownListFor(x => x.RarityList,
+                                Model.GetRarityList.Select(x => new SelectListItem { Text = x.Rarity, Value = x.Rarity }),
+                                new { @class = "form-control chosen-select", @multiple = true });
+
+                                @Html.DropDownListFor(x => x.CollectionList,
+                                Model.GetCollectionList.Select(x => new SelectListItem { Text = x.Collection, Value = x.Collection }),
+                                new { @class = "form-control chosen-select", @multiple = true });
+
+                                @Html.DropDownListFor(x => x.TemplateNameList,
+                                Model.GetTemplateNameList.Select(x => new SelectListItem { Text = x.TemplateName, Value = x.TemplateName }),
+                                new { @class = "form-control chosen-select", @multiple = true })
+
+                                <input type="submit" name="name" value="Submit" />
+                            }*@
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+
+
+    
+
+
+    @*<form asp-controller="Templates" asp-action="Index">
+
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button"
+                        id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    <i class="bi bi-filter"></i>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
+
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Type"> Animal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Type"> Event
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Type"> Special
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+        </form>*@
+
+
+    <br />
+</section>
+
+
+@*---All Templates---*@
+<section class="AllNFTs">
+    <br />
+    <h3>Templates</h3>
+    <br />
+
+    <div class="card-group">
+
+        @foreach (var item in Model.AllTemplatesDataPocos)
+        {
+            <div class="col-2">
+                <div class="card">
+
+                    <img class="card-img-top" src="~/Media/Cards/Black.png" alt="Image">
+                   
+                    <div class="card-body text-center">
+                        <p class="card-text">Name: @item.Name <br /></p>
+                        <a class="btn btn-primary" asp-controller="Templates" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <br />
+                        <br />
+                        <a class="btn btn-primary">Published?</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <br />
+</section>
+
+<script>
+
+    $('.chosen-select').chosen({ with: "50%"});
+
+</script>
+

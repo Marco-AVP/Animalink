@@ -1,0 +1,183 @@
+﻿@model Animalink.AdminWebApp.Models.Templates.EditTemplateViewModel
+@Html.HiddenFor(x => x.TemplateId)
+
+@{
+    ViewData["Title"] = "Template Creator";
+}
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/TemplateCreatorStyle.css" />
+}
+
+
+
+@*---Header---*@
+<section>
+    <br />
+    <br />
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" asp-controller="Templates" asp-action="Index">Templates</a>
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" asp-controller="Templates" asp-action="CreatorPage">Creator</a>
+    </nav>
+    <br />
+    <br />
+</section>
+
+
+@*---Template ---*@
+
+    <section class="NftInfo">
+
+        <div id="template" class="card">
+            <div class="card-body">
+                <div class="ml-5 mr-5">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group col-lg-3 col-md-6 col-lg-12">
+
+                            <label asp-for="@Model.Name" class="control-label"></label>
+                            <input asp-for="@Model.Name" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
+                            <label asp-for="@Model.Description" class="control-label"></label>
+                            <input asp-for="@Model.Description" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Description" class="text-danger"></span>
+
+                            <label asp-for="@Model.Collection" class="control-label"></label>
+                            <input asp-for="@Model.Collection" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Collection" class="text-danger"></span>
+
+                            <label asp-for="@Model.Schema" class="control-label"></label>
+                            <input asp-for="@Model.Schema" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Schema" class="text-danger"></span>
+
+                            <label asp-for="@Model.Price" class="control-label"></label>
+                            <input asp-for="@Model.Price" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Price" class="text-danger"></span>
+
+                            <label asp-for="@Model.MaxSupply" class="control-label"></label>
+                            <input asp-for="@Model.MaxSupply" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.MaxSupply" class="text-danger"></span>
+
+                            <label asp-for="@Model.IsPublished" class="control-label"></label>
+                            <input asp-for="@Model.IsPublished" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.IsPublished" class="text-danger"></span>
+
+                            <label asp-for="@Model.IsTransferable" class="control-label"></label>
+                            <input asp-for="@Model.IsTransferable" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.IsTransferable" class="text-danger"></span>
+
+                            <label asp-for="@Model.IsBurnable" class="control-label"></label>
+                            <input asp-for="@Model.IsBurnable" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.IsBurnable" class="text-danger"></span>
+
+                            <label asp-for="@Model.TemplateType" class="control-label"></label>
+                            <input asp-for="@Model.TemplateType" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.TemplateType" class="text-danger"></span>
+
+                            <label asp-for="@Model.Rarity" class="control-label"></label>
+                            <input asp-for="@Model.Rarity" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.Rarity" class="text-danger"></span>
+
+                            <label asp-for="@Model.ImageReference" class="control-label"></label>
+                            <input asp-for="@Model.ImageReference" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.ImageReference" class="text-danger"></span>
+
+                            <label asp-for="@Model.IsDeleted" class="control-label"></label>
+                            <input asp-for="@Model.IsDeleted" class="form-control lg-5" />
+                            <span asp-validation-for="@Model.IsDeleted" class="text-danger"></span>
+
+
+
+
+
+                            @*--------Hide---------*@
+                            <label asp-for="@Model.TemplateId" class="control-label"></label>
+                            <input asp-for="@Model.TemplateId" class="form-control lg-5" type="hidden" />
+                            <span asp-validation-for="@Model.TemplateId" class="text-danger"></span>
+
+                            @*<input asp-for="@Model.TemplateId" id="TemplateId" name="TemplateId" type="hidden" value="" data-val="true" />*@
+
+                        </div>
+                        
+                        <div class="form-group ml-4">
+                            <input type="submit" value="Update" class="btn btn-primary" />
+                            <a class="btn btn-primary" asp-controller="Templates" asp-action="Index">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!--<div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <img src="" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+                </div>
+
+                <div class="col" id="Attributes" style="width:100%;height:70%;">
+                    <h3 id="AttributesTitle">Attributes</h3>
+                    <p><b>Name: </b><input type="text" class="form-control" placeholder="@Model.Name"></p>
+                    <p><b>Type: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Rarity: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Level: </b><input type="text" class="form-control" placeholder=""></p>
+
+                    <p>Species: <input type="text" class="form-control" placeholder=""></p>
+                    <p>Taxonomy: <input type="text" class="form-control" placeholder=""></p>
+                    <p>Habitat: <input type="text" class="form-control" placeholder=""></p>
+                    <p>IUCN: <input type="text" class="form-control" placeholder=""></p>
+
+                    <p><b>Schema: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Collection: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Max Supply: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Number Available: </b><input type="text" class="form-control" placeholder=""></p>-->
+        @*api*@
+        <!--<p><b>Is Burnable: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Is Tranferable: </b><input type="text" class="form-control" placeholder=""></p>
+                    <p><b>Image Reference: </b><input type="text" class="form-control" placeholder=""></p>
+
+
+
+
+                </div>
+
+                <div class="col">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col" id="Description">
+                    <h2>Description</h2>
+                    <p>
+                        <input type="text" class="form-control" placeholder="">
+                    </p>
+                </div>
+
+                <div class="col">
+
+                </div>
+
+                <div class="col" id="Buy">
+                    <p>Price: <input type="text" class="form-control" placeholder=""> </p>
+                </div>
+
+            </div>
+        </div>-->
+
+        <br />
+        @*<a class="flex-sm-fill text-sm-center nav-link" aria-current="page" asp-controller="Nft" asp-action="Edit">Edit Template</a>*@
+    </section>

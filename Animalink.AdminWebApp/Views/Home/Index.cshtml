@@ -1,4 +1,4 @@
-﻿@model Animalink.AdminWebApp.Models.Nfts.TemplatesViewModel
+﻿@*@model Animalink.AdminWebApp.Models.Templates.TemplatesViewModel*@
 
 @{
     ViewData["Title"] = "Home Page";
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col">
                 <div class="card bg-c-blue order-card">
-                    <a asp-controller="Nft" asp-action="Index">
+                    <a asp-controller="Templates" asp-action="Index">
                         <div class="card-block">
                             <h2 class="text-center"><span>Templates</span></h2>
                         </div>
@@ -43,13 +43,25 @@
 
             <div class="col">
                 <div class="card bg-c-green order-card">
-                    <a asp-controller="Nft" asp-action="Create">
+                    <a asp-controller="Templates" asp-action="CreatorPage">
                         <div class="card-block">
-                            <h2 class="text-center"><span>Template Creator</span></h2>
+                            <h2 class="text-center"><span>Creator</span></h2>
                         </div>
                     </a>
                 </div>
             </div>
+
+
+            <div class="col">
+                <div class="card bg-c-green order-card">
+                    <a asp-controller="Templates" asp-action="ChosenDropDown">
+                        <div class="card-block">
+                            <h2 class="text-center"><span>Dropdown</span></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
 

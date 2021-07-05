@@ -1,0 +1,177 @@
+﻿@model Animalink.AdminWebApp.Models.Templates.DetailsTemplateViewModel
+
+@{
+    ViewData["Title"] = "Template Details";
+}
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/TemplateDetailsStyle.css" />
+}
+
+
+
+@*---Header---*@
+<section>
+    <br />
+    <br />
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" asp-controller="Templates" asp-action="Index">Templates</a>
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" asp-controller="Templates" asp-action="CreatorPage">Creator</a>
+    </nav>
+    <br />
+    <br />
+</section>
+
+
+
+@*---Template ---*@
+
+    @*Animal Template*@
+
+    @if (Model.TemplateDataPoco.TemplateType == "Animal")
+    {
+        <section class="NftInfo">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col">
+                        <img src="~/Media/Frog_mockup.png" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+                    </div>
+
+                    <div class="col" id="Attributes" style="width:100%;height:70%;">
+                        <h3 id="AttributesTitle">Attributes</h3>
+                        <p><b>Name: </b>@Model.TemplateDataPoco.Name</p>
+                        <p><b>Type: </b>@Model.TemplateDataPoco.TemplateType</p>
+                        <p><b>Rarity: </b>@Model.TemplateDataPoco.Rarity</p>
+                        <p><b>Level: </b>@Model.TemplateDataPoco.RarityLevel</p>
+
+                        <p>Species: @Model.TemplateDataPoco.Species</p>
+                        <p>Taxonomy: @Model.TemplateDataPoco.Taxonomy</p>
+                        <p>Habitat: @Model.TemplateDataPoco.Habitat</p>
+                        <p>IUCN: @Model.TemplateDataPoco.IUCN (@Model.TemplateDataPoco.IUCNAcronym)</p>
+
+                        <p><b>Schema: </b>@Model.TemplateDataPoco.Schema</p>
+                        <p><b>Collection: </b>@Model.TemplateDataPoco.Collection</p>
+                        <p><b>Max Supply: </b>@Model.TemplateDataPoco.MaxSupply</p>
+                        <p><b>Number Available: </b>@Model.TemplateDataPoco.NumberAvailable</p> @*api*@
+                        <p><b>Is Burnable: </b>@Model.TemplateDataPoco.IsBurnable</p>
+                        <p><b>Is Tranferable: </b>@Model.TemplateDataPoco.IsTransferable</p>
+                        <p><b>Image Reference: </b>@Model.TemplateDataPoco.ImageReference</p>
+
+
+
+
+                    </div>
+
+                    <div class="col">
+                        3 of 3
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col" id="Description">
+                        <h2>Description</h2>
+                        <p>
+                            @Model.TemplateDataPoco.Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+
+                    <div class="col">
+                        2 of 3
+                    </div>
+
+                    <div class="col" id="Buy">
+                        <p>Price: @Model.TemplateDataPoco.Price </p>
+                        <a class="btn btn-primary">Buy</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <br />
+        </section>
+    }
+    else
+    {
+        //Non Animal Templates
+
+        <section class="NftInfo">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col">
+                        <img src="~/Media/Cards/Black.png" class="img-fluid" alt="Image" style="width:100%;height:100%;" />
+                    </div>
+
+                    <div class="col" id="Attributes" style="width:100%;height:70%;">
+                        <h3 id="AttributesTitle">Attributes</h3>
+                        <p><b>Name: </b>@Model.TemplateDataPoco.Name</p>
+                        <p><b>Type: </b>@Model.TemplateDataPoco.TemplateType</p>
+                        <p><b>Rarity: </b>@Model.TemplateDataPoco.Rarity</p>
+                        <p><b>Schema: </b>@Model.TemplateDataPoco.Schema</p>
+                        <p><b>Collection: </b>@Model.TemplateDataPoco.Collection</p>
+                        <p><b>Max Supply: </b>@Model.TemplateDataPoco.MaxSupply</p>
+                        <p><b>Number Available: </b>@Model.TemplateDataPoco.NumberAvailable</p>
+                        <p><b>Is Burnable: </b>@Model.TemplateDataPoco.IsBurnable</p>
+                        <p><b>Is Tranferable: </b>@Model.TemplateDataPoco.IsTransferable</p>
+                        <p><b>Image Reference: </b>@Model.TemplateDataPoco.ImageReference</p>
+                        <p><b>Price: </b>@Model.TemplateDataPoco.Price</p>
+                    </div>
+
+                    <div class="col">
+                        
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col" id="Description">
+                        <h2>Description</h2>
+                        <p>
+                            @Model.TemplateDataPoco.Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+
+                    <div class="col">
+                        
+                    </div>
+
+                    <div class="col" id="Buy">
+                        <a class="btn btn-primary" asp-controller="Templates" asp-action="Edit" asp-route-id="@Model.TemplateDataPoco.Id">Edit</a>
+                        <a class="btn btn-primary" asp-controller="Templates" asp-action="Index">Cancel</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <br />
+        </section>
+    }
+
+

@@ -8,12 +8,12 @@ namespace Animalink.WebApp.Models.Nfts
 {
     public class NftViewModel
     {
-        public List<TemplateDataPoco> NftDataPocos { get; set; }
+        public List<FullTemplateDataPoco> NftDataPocos { get; set; }
 
 
         public NftViewModel()
         {
-            NftDataPocos = new List<TemplateDataPoco>();
+            NftDataPocos = new List<FullTemplateDataPoco>();
         }
 
     }

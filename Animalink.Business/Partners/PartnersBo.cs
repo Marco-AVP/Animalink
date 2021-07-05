@@ -18,7 +18,7 @@ namespace Animalink.Business.Partners
         {
             var genericBO = new GenericBo();
 
-            return await genericBO.ExecuteOperation(async () =>
+            return await genericBO.ExecuteDBOperation(async () =>
             {
                 var dao = new GenericDao();
                 return await dao.ListAsync<Partner>();

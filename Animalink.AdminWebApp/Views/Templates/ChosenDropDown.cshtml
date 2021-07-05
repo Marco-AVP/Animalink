@@ -1,0 +1,34 @@
+﻿@model Animalink.AdminWebApp.Models.Templates.Filters
+
+@{
+    ViewBag.Title = "ChosenDropDown";
+}
+
+<h2>ChosenDropDown</h2>
+<link rel="stylesheet" href="/lib/chosen_v1.8.7/chosen.css" />
+<script src="~/lib/chosen_v1.8.7/chosen.jquery.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(x => x.TemplateTypeList,
+    Model.GetTemplateTypeList.Select(x => new SelectListItem { Text = x.TemplateType, Value = x.TemplateType.ToString() }),
+    new { @class = "form-control chosen-select", @multiple = true });
+
+    @Html.DropDownListFor(x => x.RarityList,
+    Model.GetRarityList.Select(x => new SelectListItem { Text = x.Rarity, Value = x.Rarity }),
+    new { @class = "form-control chosen-select", @multiple = true });
+
+    @Html.DropDownListFor(x => x.CollectionList,
+    Model.GetCollectionList.Select(x => new SelectListItem { Text = x.Collection, Value = x.Collection }),
+    new { @class = "form-control chosen-select", @multiple = true });
+
+
+    <input type="submit" name="name" value="Submit" />
+
+}
+
+<script>
+
+    $('.chosen-select').chosen();
+
+</script>

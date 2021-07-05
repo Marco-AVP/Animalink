@@ -26,7 +26,7 @@ namespace Animalink.WebApp.Controllers
                 {
                     var partnerData = new PartnerDataPoco();
 
-                    partnerData.Name = item.PartnerName;
+                    partnerData.Name = item.Name;
                     partnerData.Description = item.Description;
                     partnerData.ImageReference = item.ImageReference;
                     partnerData.WebsiteURL = item.WebsiteURL;
@@ -54,7 +54,7 @@ namespace Animalink.WebApp.Controllers
                     {
                         var partnerData = new PartnerDataPoco();
 
-                        partnerData.Name = item.PartnerName;
+                        partnerData.Name = item.Name;
                         partnerData.Description = item.Description;
                         partnerData.ImageReference = item.ImageReference;
                         partnerData.WebsiteURL = item.WebsiteURL;

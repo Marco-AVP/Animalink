@@ -17,15 +17,15 @@ namespace Animalink.WebApp.Controllers
         public async Task<IActionResult> NftInfo(Guid nftId)
         {
             var nftModel = new NftViewModel();
-            var allNftsBo = new AllNftsBo();
-            var nftTemplateListOperation = await allNftsBo.ListTemplatesById(nftId);
+            var allNftsBo = new TemplatesBo();
+            var nftTemplateListOperation = await allNftsBo.GetFullTemplateById(nftId);
             var template = nftTemplateListOperation.Result;
 
-                var nftTemplateData = new TemplateDataPoco();
+                var nftTemplateData = new FullTemplateDataPoco();
 
                 nftTemplateData.Id = template.Id;
-                nftTemplateData.NftName = template.NftName;
-                nftTemplateData.NftType = template.NftType;
+                nftTemplateData.Name = template.Name;
+                nftTemplateData.TemplateType = template.TemplateType;
                 nftTemplateData.Rarity = template.Rarity;
                 nftTemplateData.RarityLevel = template.RarityLevel;
                 nftTemplateData.Species = template.Species;
@@ -60,15 +60,15 @@ namespace Animalink.WebApp.Controllers
         public async Task<IActionResult> ShowNftInfo(AllNftsViewModel vm, Guid nftId)
         {
             var nftModel = new NftViewModel();
-            var allNftsBo = new AllNftsBo();
-            var nftTemplateListOperation = await allNftsBo.ListTemplatesById(nftId);
+            var allNftsBo = new TemplatesBo();
+            var nftTemplateListOperation = await allNftsBo.GetFullTemplateById(nftId);
             var template = nftTemplateListOperation.Result;
 
 
-                var nftTemplateData = new TemplateDataPoco();
+                var nftTemplateData = new FullTemplateDataPoco();
 
                 nftTemplateData.Id = template.Id;
-                nftTemplateData.NftName = template.NftName;
+                nftTemplateData.Name = template.Name;
                 var value = template.Price;
                 nftTemplateData.Price = Math.Round(value, 2);
                 nftTemplateData.NumberAvailable = template.NumberAvailable;

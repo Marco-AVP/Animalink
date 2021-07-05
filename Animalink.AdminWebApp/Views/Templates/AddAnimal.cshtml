@@ -1,0 +1,74 @@
+﻿
+@model Animalink.AdminWebApp.Models.Creator.AnimalViewModel
+
+@{
+    ViewData["Title"] = "Add Animal";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/" />
+}
+
+
+@*---Header---*@
+<section>
+    <br />
+    <br />
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" asp-controller="Templates" asp-action="Index">Templates</a>
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" asp-controller="Templates" asp-action="CreatorPage">Creator</a>
+    </nav>
+    <br />
+    <br />
+</section>
+
+
+@*---Template ---*@
+
+<section class="AddAnimal">
+
+    <div id="template" class="card">
+        <div class="card-body">
+            <div class="ml-5 mr-5">
+                <form asp-action="AddAnimal">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group col-lg-3 col-md-6 col-lg-12">
+
+                        <label asp-for="@Model.Name" class="control-label"></label>
+                        <input asp-for="@Model.Name" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
+                        <label asp-for="@Model.Species" class="control-label"></label>
+                        <input asp-for="@Model.Species" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.Species" class="text-danger"></span>
+
+                        <label asp-for="@Model.Habitat" class="control-label"></label>
+                        <input asp-for="@Model.Habitat" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.Habitat" class="text-danger"></span>
+
+                        <label asp-for="@Model.Taxonomy" class="control-label"></label>
+                        <input asp-for="@Model.Taxonomy" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.Taxonomy" class="text-danger"></span>
+
+                        <label asp-for="@Model.IUCN" class="control-label"></label>
+                        <input asp-for="@Model.IUCN" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.IUCN" class="text-danger"></span>
+
+                        <label asp-for="@Model.IUCNAcronym" class="control-label"></label>
+                        <input asp-for="@Model.IUCNAcronym" class="form-control lg-5" />
+                        <span asp-validation-for="@Model.IUCNAcronym" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group ml-4">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-controller="Templates" asp-action="CreatorPage">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+</section>

@@ -69,19 +69,19 @@ namespace Animalink.WebApp.Controllers
         public async Task<IActionResult> ShowAllNfts(AllNftsViewModel vm, string nftType)
         {
             var allNftsModel = new AllNftsViewModel();
-            var allNftsBo = new AllNftsBo();
-            var nftTemplatesInfo = await allNftsBo.ListTemplatesByType(nftType);
+            var allNftsBo = new TemplatesBo();
+            var nftTemplatesInfo = await allNftsBo.ListFullTemplatesByType(nftType);
 
             foreach (var item in nftTemplatesInfo.Result)
             {
-                    var nftTemplateData = new TemplateDataPoco();
+                var nftTemplateData = new FullTemplateDataPoco();
 
-                    nftTemplateData.Id = item.Id;
-                    nftTemplateData.NftName = item.NftName;
-                    nftTemplateData.Price = item.Price;
-                    nftTemplateData.NumberAvailable = item.NumberAvailable;
-                    nftTemplateData.ImageReference = item.ImageReference;
-                    allNftsModel.AllTemplatesDataPocos.Add(nftTemplateData);
+                nftTemplateData.Id = item.Id;
+                nftTemplateData.Name = item.Name;
+                nftTemplateData.Price = item.Price;
+                nftTemplateData.NumberAvailable = item.NumberAvailable;
+                nftTemplateData.ImageReference = item.ImageReference;
+                allNftsModel.AllTemplatesDataPocos.Add(nftTemplateData);
             }
 
             return View();

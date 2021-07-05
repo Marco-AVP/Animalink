@@ -12,6 +12,7 @@ namespace Animalink.Data
         [Required]
         [Column(TypeName = "varchar(255)")]
         public string UserName { get; set; }
+
         [Required]
         [Column(TypeName = "varchar(255)")]
         public string Password { get; set; }

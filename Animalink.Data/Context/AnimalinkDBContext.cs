@@ -37,13 +37,18 @@ namespace Animalink.Data.Context
 
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AdminStatistic> AdminStatistics { get; set; }
+        public DbSet<Animal> Animals { get; set; }
+        public DbSet<Collection> Collections { get; set; }
+        public DbSet<GeneralStatistic> GeneralStatistics { get; set; }
+        public DbSet<Partner> Partners { get; set; }
+        public DbSet<Rarity> Rarities { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Schema> Schemas { get; set; }
+        public DbSet<Template> Templates { get; set; }
+        public DbSet<TemplateType> TemplateTypes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserStatistic> UserStatistics { get; set; }
-        public DbSet<GeneralStatistic> GeneralStatistics { get; set; }
-        public DbSet<NftTemplate> NftTemplates { get; set; }
-        public DbSet<Animal> Animals { get; set; }
-        public DbSet<Sale> Sales { get; set; }
-        public DbSet<Partner> Partners { get; set; }
+        
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,180 +59,178 @@ namespace Animalink.Data.Context
 
             #region Animals
 
-            modelBuilder.Entity<Animal>().HasData 
-                (
-                    new Animal
-                    {
-                        Id = new Guid("a76492d7-f83b-465f-bbd6-de0338a284ab"),
-                        AnimalName = "Tiger",
-                        Taxonomy = "Animal, Mammal, Tiger",
-                        Species = "Panthera tigris sumatrae",
-                        Habitat = "Sumatra",
-                        IUCN = "Endangered",
-                        IUCNAcronym = "EN",
-                    },
-                    new Animal
-                    {
-                        Id = new Guid("87759b7e-f2cc-44eb-a87d-98de9b5bd087"),
-                        AnimalName = "Tropical Frog",
-                        Taxonomy = "Animal, Amphibian, Frog",
-                        Species = "Bolivian Tree Frog",
-                        Habitat = "Bolivia",
-                        IUCN = "Vulnerable",
-                        IUCNAcronym = "VU",
-                    }, new Animal
-                    {
-                        Id = new Guid("41678cf9-bb3b-4a9f-976e-33b57a3af390"),
-                        AnimalName = "Golden Eagle",
-                        Taxonomy = "Animal, Bird, Eagle",
-                        Species = "Apanea Ittis",
-                        Habitat = "Philipines",
-                        IUCN = "Least Concerned",
-                        IUCNAcronym = "LC",
-                    }, new Animal
-                    {
-                        Id = new Guid("8ac63722-756c-4822-90a1-75c5a2fd2a30"),
-                        AnimalName = "Iberian Lynx",
-                        Taxonomy = "Animal, Mammal, Lynx",
-                        Species = "Lynx pardinus",
-                        Habitat = "Iberian Peninsula",
-                        IUCN = "Critically Endangered",
-                        IUCNAcronym = "CR",
-                    }
+            //modelBuilder.Entity<Animal>().HasData 
+            //    (
+            //        new Animal
+            //        {
+            //            Id = new Guid("a76492d7-f83b-465f-bbd6-de0338a284ab"),
+            //            Name = "Tiger",
+            //            Taxonomy = "Animal, Mammal, Tiger",
+            //            Species = "Panthera tigris sumatrae",
+            //            Habitat = "Sumatra",
+            //            IUCN = "Endangered",
+            //            IUCNAcronym = "EN",
+            //        },
+            //        new Animal
+            //        {
+            //            Id = new Guid("87759b7e-f2cc-44eb-a87d-98de9b5bd087"),
+            //            Name = "Tropical Frog",
+            //            Taxonomy = "Animal, Amphibian, Frog",
+            //            Species = "Bolivian Tree Frog",
+            //            Habitat = "Bolivia",
+            //            IUCN = "Vulnerable",
+            //            IUCNAcronym = "VU",
+            //        }, new Animal
+            //        {
+            //            Id = new Guid("41678cf9-bb3b-4a9f-976e-33b57a3af390"),
+            //            Name = "Golden Eagle",
+            //            Taxonomy = "Animal, Bird, Eagle",
+            //            Species = "Apanea Ittis",
+            //            Habitat = "Philipines",
+            //            IUCN = "Least Concerned",
+            //            IUCNAcronym = "LC",
+            //        }, new Animal
+            //        {
+            //            Id = new Guid("8ac63722-756c-4822-90a1-75c5a2fd2a30"),
+            //            Name = "Iberian Lynx",
+            //            Taxonomy = "Animal, Mammal, Lynx",
+            //            Species = "Lynx pardinus",
+            //            Habitat = "Iberian Peninsula",
+            //            IUCN = "Critically Endangered",
+            //            IUCNAcronym = "CR",
+            //        }
 
-
-                );
+            //    );
 
             #endregion
 
-            #region NftTemplate
+            #region Templates
 
-            modelBuilder.Entity<NftTemplate>().HasData  // Rarities - very Common-0, Common-1, Uncommon-2, Rare-3, Super Rare-4, Epic-5, Legendary-6, Mythic-7, Special.
-                (
-                    new NftTemplate
-                    {
-                        IsPublished = true,
-                        PublishedAt = DateTime.UtcNow,
-                        Name = "Tropical Frog",
-                        Description = "Its a frog",
-                        Collection = "Animalink",
-                        Schema = "South America",
-                        Price = 25,
-                        MaxSupply = 400,
-                        ImageReference = "www.website.com",
-                        IsTransferable = true,
-                        IsBurnable = true,
-                        NumberAvailable = 57,
-                        AnimalId = Guid.Parse("87759b7e-f2cc-44eb-a87d-98de9b5bd087"),
-                        NftType = "Animal",
-                        Rarity = "Rare",
-                        RarityLevel = 3
-                    },
-                    new NftTemplate
-                    {
-                        IsPublished = true,
-                        PublishedAt = DateTime.UtcNow,
-                        Name = "Golden Eagle",
-                        Description = "Its an eagle",
-                        Collection = "Animalink",
-                        Schema = "East Asia",
-                        Price = 5,
-                        MaxSupply = 1000,
-                        ImageReference = "www.website.com",
-                        IsTransferable = true,
-                        IsBurnable = true,
-                        NumberAvailable = 250,
-                        NftType = "Animal",
-                        Rarity = "Common",
-                        RarityLevel = 1,
-                        AnimalId = Guid.Parse("41678cf9-bb3b-4a9f-976e-33b57a3af390"),
-                    },
-                    new NftTemplate
-                    {
-                        IsPublished = true,
-                        PublishedAt = DateTime.UtcNow,
-                        Name = "Sumatran Tiger",
-                        Description = "Its a tiger",
-                        Collection = "Animalink",
-                        Schema = "East Asia",
-                        Price = 99,
-                        MaxSupply = 10,
-                        ImageReference = "www.website.com",
-                        IsTransferable = true,
-                        IsBurnable = false,
-                        NumberAvailable = 0,
-                        NftType = "Animal",
-                        Rarity = "Super Rare",
-                        RarityLevel = 4,
-                        AnimalId = Guid.Parse("a76492d7-f83b-465f-bbd6-de0338a284ab")
-                    },
-                    new NftTemplate
-                    {
-                        IsPublished = false,
-                        PublishedAt = DateTime.UtcNow,
-                        Name = "Iberian Lynx",
-                        Description = "Its a Lynx",
-                        Collection = "Animalink",
-                        Schema = "European",
-                        Price = 120,
-                        MaxSupply = 5,
-                        ImageReference = "www.website.com",
-                        IsTransferable = true,
-                        IsBurnable = false,
-                        NumberAvailable = 7,
-                        NftType = "Animal",
-                        Rarity = "Epic",
-                        RarityLevel = 5,
-                        AnimalId = Guid.Parse("8ac63722-756c-4822-90a1-75c5a2fd2a30")
-                    },
-                    new NftTemplate
-                    {
-                        IsPublished = false,
-                        PublishedAt = DateTime.UtcNow,
-                        Name = "Earth Day",
-                        Description = "Celebrate Earth Day",
-                        Collection = "Animalink",
-                        Schema = "Events",
-                        Price = 120,
-                        MaxSupply = 5,
-                        ImageReference = "www.website.com",
-                        IsTransferable = true,
-                        IsBurnable = false,
-                        NumberAvailable = 28,
-                        NftType = "Event",
-                        Rarity = "Special",
-                        RarityLevel = null,
-                    }
-                );
+            //modelBuilder.Entity<Template>().HasData  // Rarities - very Common-0, Common-1, Uncommon-2, Rare-3, Super Rare-4, Epic-5, Legendary-6, Mythic-7, Special.
+            //    (
+            //        new Template
+            //        {
+            //            IsPublished = true,
+            //            PublishedAt = DateTime.UtcNow,
+            //            Name = "Tropical Frog",
+            //            Description = "Its a frog",
+            //            CollectionId = "",
+            //            SchemaId = "",
+            //            Price = 25,
+            //            MaxSupply = 400,
+            //            ImageReference = "www.website.com",
+            //            IsTransferable = true,
+            //            IsBurnable = true,
+            //            NumberAvailable = 57,
+            //            AnimalId = Guid.Parse("87759b7e-f2cc-44eb-a87d-98de9b5bd087"),
+            //            TemplateTypeId = "",
+            //            RarityId = "",
+            //        },
+            //        new Template
+            //        {
+            //            IsPublished = true,
+            //            PublishedAt = DateTime.UtcNow,
+            //            Name = "Golden Eagle",
+            //            Description = "Its an eagle",
+            //            Collection = "Animalink",
+            //            Schema = "East Asia",
+            //            Price = 5,
+            //            MaxSupply = 1000,
+            //            ImageReference = "www.website.com",
+            //            IsTransferable = true,
+            //            IsBurnable = true,
+            //            NumberAvailable = 250,
+            //            NftType = "Animal",
+            //            Rarity = "Common",
+            //            RarityLevel = 1,
+            //            AnimalId = Guid.Parse("41678cf9-bb3b-4a9f-976e-33b57a3af390"),
+            //        },
+            //        new Template
+            //        {
+            //            IsPublished = true,
+            //            PublishedAt = DateTime.UtcNow,
+            //            Name = "Sumatran Tiger",
+            //            Description = "Its a tiger",
+            //            Collection = "Animalink",
+            //            Schema = "East Asia",
+            //            Price = 99,
+            //            MaxSupply = 10,
+            //            ImageReference = "www.website.com",
+            //            IsTransferable = true,
+            //            IsBurnable = false,
+            //            NumberAvailable = 0,
+            //            NftType = "Animal",
+            //            Rarity = "Super Rare",
+            //            RarityLevel = 4,
+            //            AnimalId = Guid.Parse("a76492d7-f83b-465f-bbd6-de0338a284ab")
+            //        },
+            //        new Template
+            //        {
+            //            IsPublished = false,
+            //            PublishedAt = DateTime.UtcNow,
+            //            Name = "Iberian Lynx",
+            //            Description = "Its a Lynx",
+            //            Collection = "Animalink",
+            //            Schema = "European",
+            //            Price = 120,
+            //            MaxSupply = 5,
+            //            ImageReference = "www.website.com",
+            //            IsTransferable = true,
+            //            IsBurnable = false,
+            //            NumberAvailable = 7,
+            //            NftType = "Animal",
+            //            Rarity = "Epic",
+            //            RarityLevel = 5,
+            //            AnimalId = Guid.Parse("8ac63722-756c-4822-90a1-75c5a2fd2a30")
+            //        },
+            //        new Template
+            //        {
+            //            IsPublished = false,
+            //            PublishedAt = DateTime.UtcNow,
+            //            Name = "Earth Day",
+            //            Description = "Celebrate Earth Day",
+            //            Collection = "Animalink",
+            //            Schema = "Events",
+            //            Price = 120,
+            //            MaxSupply = 5,
+            //            ImageReference = "www.website.com",
+            //            IsTransferable = true,
+            //            IsBurnable = false,
+            //            NumberAvailable = 28,
+            //            NftType = "Event",
+            //            Rarity = "Special",
+            //            RarityLevel = null,
+            //        }
+            //    );
 
             #endregion
 
             #region Partners
 
-            modelBuilder.Entity<Partner>().HasData
-                (
-                    new Partner
-                    {
-                        PartnerName = "Zoo de Guarulhos, Brasil",
-                        Description = "A description of the place in question",
-                        ImageReference = "link to the Partner logo",
-                        WebsiteURL = "www.site.com"
-                    },
-                    new Partner
-                    {
-                        PartnerName = "Borneo Orangutan Rescue",
-                        Description = "A description of the place in question",
-                        ImageReference = "link to the Partner logo",
-                        WebsiteURL = "www.site.com"
-                    },
-                    new Partner
-                    {
-                        PartnerName = "Iberian Lynx Conservation",
-                        Description = "A description of the place in question",
-                        ImageReference = "link to the Partner logo",
-                        WebsiteURL = "www.site.com"
-                    }
-                );
+            //modelBuilder.Entity<Partner>().HasData
+            //    (
+            //        new Partner
+            //        {
+            //            Name = "Zoo de Guarulhos, Brasil",
+            //            Description = "A description of the place in question",
+            //            ImageReference = "link to the Partner logo",
+            //            WebsiteURL = "www.site.com"
+            //        },
+            //        new Partner
+            //        {
+            //            Name = "Borneo Orangutan Rescue",
+            //            Description = "A description of the place in question",
+            //            ImageReference = "link to the Partner logo",
+            //            WebsiteURL = "www.site.com"
+            //        },
+            //        new Partner
+            //        {
+            //            Name = "Iberian Lynx Conservation",
+            //            Description = "A description of the place in question",
+            //            ImageReference = "link to the Partner logo",
+            //            WebsiteURL = "www.site.com"
+            //        }
+            //    );
 
             #endregion
 
@@ -240,11 +243,6 @@ namespace Animalink.Data.Context
                        Id = new Guid ("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F"),
                        UserName = "Admin1",
                        Password = "123456"
-                   },
-                   new Admin
-                   {
-                       UserName = "Admin2",
-                       Password = "1!_X+*´~ _"
                    }
                );
 
@@ -252,57 +250,57 @@ namespace Animalink.Data.Context
 
             #region Admin Statistics
 
-            modelBuilder.Entity<AdminStatistic>().HasData
-                (
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Number of NFTs",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Number of NFTs Sold",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Value Made",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Number of Animals",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Number of Species",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Total Value Donated",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = "Value Donated by Partner",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
-                    },
-                    new AdminStatistic
-                    {
-                        Statistic = "",
-                        StatisticType = " Total Number of Users ",
-                        AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F" )
-                    }
-                );
+            //modelBuilder.Entity<AdminStatistic>().HasData
+            //    (
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Number of NFTs",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Number of NFTs Sold",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Value Made",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Number of Animals",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Number of Species",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Total Value Donated",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = "Value Donated by Partner",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F")
+            //        },
+            //        new AdminStatistic
+            //        {
+            //            Statistic = "",
+            //            StatisticType = " Total Number of Users ",
+            //            AdminId = Guid.Parse("E68353EA-91FB-4A2E-B29E-B75C10DEFA4F" )
+            //        }
+            //    );
 
             #endregion
 
@@ -341,7 +339,7 @@ namespace Animalink.Data.Context
             #endregion
 
 
-            #endregion
+         #endregion
 
         }
 

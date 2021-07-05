@@ -10,7 +10,7 @@ namespace Animalink.Data.Pocos.Users
         public Guid Id { get; set; }
         public string UserName { get; set; }
         public string ImageReference { get; set; }
-        public List<SaleDataPoco> NftsOwned { get; set; }
+        public List<SaleDataPoco> TemplatesBought { get; set; }
 
     }
 }
